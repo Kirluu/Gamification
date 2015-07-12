@@ -204,8 +204,18 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Achievement.cs" />
+    <Compile Include="Models\Assignment.cs" />
+    <Compile Include="Models\AssignmentType.cs" />
+    <Compile Include="Models\AssignmentTypeReq.cs" />
+    <Compile Include="Models\JobPointProduct.cs" />
+    <Compile Include="Models\JobPointPurchase.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\GeneralStat.cs" />
+    <Compile Include="Models\GeneralStatAmount.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Level.cs" />
+    <Compile Include="Models\StatEffect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
