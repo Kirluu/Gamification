@@ -25,6 +25,11 @@ namespace GamificationApi.Controllers
             _dtoFactory = new DtoFactory(_unitOfWork);
         }
 
+        //public IHttpActionResult Player()
+        //{
+
+        //}
+
         // GET: api/Player
         public IEnumerable<string> Get() // Get all players
         {
