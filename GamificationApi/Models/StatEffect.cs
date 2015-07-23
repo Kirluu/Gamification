@@ -10,6 +10,6 @@ namespace GamificationApi.Models
     public class StatEffect
     {
         public AffectedStatBonus AffectedStatBonus { get; set; }
-        public double Multiplier { get; set; } // TODO: Pr. stat? Algorithmic?
+        public double Multiplier { get; set; } // TODO: Pr. stat? Algorithmic? %?
     }
 }
