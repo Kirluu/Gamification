@@ -12,23 +12,18 @@ using GamificationApi.Models;
 
 namespace GamificationApi.Controllers
 {
-    public class PlayerController : ApiController // Maybe just need to use AccountController for this? Confirm with Isabella eventually
+    public class PlayerApiController : ApiController // Maybe just need to use AccountController for this? Confirm with Isabella eventually
     {
         private IUnitOfWork _unitOfWork;
         private IGameLogicApplier _gameLogic;
         private IDtoFactory _dtoFactory;
 
-        public PlayerController()
+        public PlayerApiController()
         {
             _unitOfWork = new UnitOfWork();
             _gameLogic = new GameLogicApplier(_unitOfWork, new AchievementChecker(), new StatApplier(), new LevelUpChecker());
             _dtoFactory = new DtoFactory(_unitOfWork);
         }
-
-        //public IHttpActionResult Player()
-        //{
-
-        //}
 
         // GET: api/Player
         public IEnumerable<string> Get() // Get all players

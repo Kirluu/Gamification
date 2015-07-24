@@ -1,0 +1,73 @@
+﻿@model GamificationApi.Models.Player
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>Profile</h2>
+
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Experience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Experience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobPoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobPoints)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.GeneralStats)
+        </dt>
+        
+        <dd>
+            @foreach (var genStat in Model.GeneralStats)
+            {
+                <dt>
+                    @Html.Display(genStat.Name)
+                </dt>
+                <dd>
+                    @Html.Display(""+genStat.Amount)
+                </dd>
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
