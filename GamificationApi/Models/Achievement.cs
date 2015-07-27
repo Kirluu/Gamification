@@ -10,6 +10,11 @@ namespace GamificationApi.Models
     {
         [Key]
         public int Id { get; set; }
+
+        // Information
+        public string Name { get; set; }
+        public string Description { get; set; }
+
         // Requirements
         public List<AssignmentTypeReq> AssignmentTypeReqs { get; set; }
         public List<GeneralStat> GeneralStatReqs { get; set; }

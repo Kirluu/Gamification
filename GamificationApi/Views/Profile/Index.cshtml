@@ -8,7 +8,7 @@
 
 <div>
     <h4>Player</h4>
-    <hr />
+    <hr/>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -49,24 +49,45 @@
         <dd>
             @Html.DisplayFor(model => model.JobPoints)
         </dd>
-        
-        <dt>
-            @Html.DisplayNameFor(model => model.GeneralStats)
-        </dt>
-        
-        <dd>
-            @foreach (var genStat in Model.GeneralStats)
-            {
-                <dt>
-                    @Html.Display(genStat.Name)
-                </dt>
-                <dd>
-                    @Html.Display(""+genStat.Amount)
-                </dd>
-            }
-        </dd>
 
+        @*<dt>
+            @Html.DisplayNameFor(model => model.GeneralStats)
+        </dt>*@
+
+        @foreach (var genStat in Model.GeneralStats)
+        {
+            <dt>@genStat.Name</dt>
+            <dd>@genStat.Amount</dd>
+        }
     </dl>
+    <table style="width: 10%">
+        <tr>
+            <td>@Model.GeneralStats[0].Name</td>
+            <td>@Model.GeneralStats[0].Amount</td>
+        </tr>
+        <tr>
+            <td>@Model.GeneralStats[1].Name</td>
+            <td>@Model.GeneralStats[1].Amount</td>
+        </tr>
+        <tr>
+            <td>@Model.GeneralStats[2].Name</td>
+            <td>@Model.GeneralStats[2].Amount</td>
+        </tr>
+        <tr>
+            <td>@Model.GeneralStats[3].Name</td>
+            <td>@Model.GeneralStats[3].Amount</td>
+        </tr>
+    </table>
+
+    <h1>Achievements</h1>
+    <dl>
+        @foreach (var achievement in Model.Achievements)
+        {
+            <dt>@Html.ActionLink(achievement.Name, "Index")</dt> @*Link to Achievement "Details" based on ID*@
+            <dd>@achievement.Description</dd>
+        }
+    </dl>
+    
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index")

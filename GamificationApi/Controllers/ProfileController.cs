@@ -23,8 +23,8 @@ namespace GamificationApi.Controllers
         // GET: Profile
         public ActionResult Index()
         {
-            //var player = _unitOfWork.PlayerRepository.Get(null, null, "").FirstOrDefault();
-            return View();
+            var player = _unitOfWork.PlayerRepository.Get(null, null, "GeneralStats,Achievements,AssignmentsCompleted,JobPointPurchases").FirstOrDefault();
+            return View(player);
         }
 
         // GET: Profile/Details/5

@@ -13,7 +13,7 @@ namespace GamificationApi.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            //AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(GameContext context)
@@ -52,13 +52,13 @@ namespace GamificationApi.Migrations
             var perception = new GeneralStat
             {
                 Name = "Perception",
-                StatEffect = new StatEffect {AffectedStatBonus = AffectedStatBonus.AllRewards, Multiplier = 0.0001},
+                StatEffect = new StatEffect { AffectedStatBonus = AffectedStatBonus.AllRewards, Multiplier = 0.0001 },
                 Amount = 1.00
             };
-            context.GeneralStats.AddOrUpdate(willpower, charisma, intelligence, perception);
+            context.GeneralStats.AddOrUpdate(x => x.Id, willpower, charisma, intelligence, perception);
 
             // Initial test player
-            context.Players.AddOrUpdate(new Player
+            context.Players.AddOrUpdate(x => x.Id, new Player
             {
                 Name = "Admin",
                 Experience = 255,
@@ -78,7 +78,7 @@ namespace GamificationApi.Migrations
             });
 
             // Level-ups
-            context.Levels.AddOrUpdate(new Level
+            context.Levels.AddOrUpdate(x => x.Id, new Level
             {
                 LevelNumber = 2,
                 Title = "Newbie",
